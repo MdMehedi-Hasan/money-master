@@ -1,0 +1,8 @@
+
+.bg-custom{
+    background-color: rgba(235, 235, 235, 0.301);
+    box-shadow: #dedede 1px 1px 6px 6px;
+}
+.bg-gray{
+    background-color: rgba(199, 199, 199, 0.856);
+}

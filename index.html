@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <header class="text-center mt-5">
+        <h1>Money Heist</h1>
+    </header>
+    <main class="mb-5">
+        <section class=" container-lg row gy-5 gx-5 m-auto">
+            <div class="image-left-aligned col-md-6">
+                <img src="images/money.jpg" alt="Money image"  class="w-100 rounded h-100">
+            </div>
+            <div class="calculation-right-aligned col-md-6">
+                <div class="border bg-custom text-center h-100">
+                    <h4 class="mt-5 mb-3">Income</h4>
+                    <h6 class="d-inline pe-2">Income:</h6>
+                    <input id="income-field" class="me-md-5 bg-gray border border-0" type="text ">
+                    <h4 class="my-3">Expenses</h4>
+                    <h6 class="d-inline pe-2">Food:</h6>
+                    <input id="food-field" class="me-md-4 mb-3 bg-gray border border-0" type="text"><br>
+                    <h6 class="d-inline me-md-2">Rent:&nbsp;</h6>
+                    <input id="rent-field" class="me-md-4 mb-3 bg-gray border border-0" type="text"><br>
+                    <h6 class="d-inline me-2">Clothes: &nbsp;</h6>
+                    <input id="clothes-field" class="me-md-5  bg-gray border border-0" type="text"><br>
+                    <button id="calculate-btn" class="btn-primary my-4 py-2 px-5 ms-md-3 fw-bold">Canculate</button>
+                    <h4>Total Expenses: <span>00</span></h4>
+                    <h4 class="my-3">Balance: <span>00</span></h4>
+                    <h6 class="d-inline ">Save:</h6>
+                    <input id="save-field" class="w-25 bg-gray border border-0 text-center bg-gray my-4 py-2" type="text"> <span class="mx-3">%</span>
+                    <button id="save-btn" class="btn-primary fw-bold py-2 px-5 mb-4">Save</button>
+                    <h4>Saving Amount: <span>00</span></h4>
+                    <h4 class="pb-5 mt-3">Remaining Balance: <span>00</span></h4>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
