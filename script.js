@@ -17,6 +17,7 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
     // income field validation
     if (isNaN (incomeField) || incomeField<=0){
         document.getElementById('income-error').style.display='block';
+        balance.innerText = 0;
     }
     else{
         // Major
@@ -31,9 +32,14 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
     if (isNaN (foodField) || isNaN (rentField) || isNaN (clothesField)){
         document.getElementById('expense-error').style.display='block';
     }
+    else if(isNaN (incomeField)){
+        balance.innerText = 0;
+    }
     else if(incomeField<expenses.innerText) {
         document.getElementById('expense-error2').style.display='block';
         document.getElementById('expense-error').style.display='none';
+        expenses.innerText = 0;
+        balance.innerText = 0;
     }
     else{
         const addingExpenses = foodField+rentField+clothesField;
@@ -44,6 +50,7 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
         document.getElementById('expense-error2').style.display='none';
     }
 })
+// savings section calculation
 
 document.getElementById('save-btn').addEventListener('click',function(){
     const saving = collectingId('savings-amount');
@@ -61,12 +68,8 @@ document.getElementById('save-btn').addEventListener('click',function(){
     else{
         const calcPercantage = (incomeField*saveField)/100;
         saving.innerText = calcPercantage;
-        remaining.innerText = parseFloat(balance.innerText) - parseFloat   (saving.innerText);
+        remaining.innerText = parseFloat(balance.innerText) - parseFloat(saving.innerText);
         document.getElementById('save-error').style.display='none';
         document.getElementById('save-error').style.display='none';
     }
-   /*  const calcPercantage = (incomeField*saveField)/100;
-    saving.innerText = calcPercantage;
-    remaining.innerText = parseFloat(balance.innerText) - parseFloat(saving.innerText); */
-
 })
