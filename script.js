@@ -20,17 +20,17 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
         balance.innerText = 0;
     }
     else{
-        // Major
+        // Major calculation
         const addingExpenses = foodField+rentField+clothesField;
         expenses.innerText=addingExpenses;
         const subtracting = incomeField-addingExpenses;
         balance.innerText = subtracting; 
-        // Major
         document.getElementById('income-error').style.display='none';
     }
     // Expense field validation
-    if (isNaN (foodField) || isNaN (rentField) || isNaN (clothesField)){
+    if (isNaN (foodField) || isNaN (rentField) || isNaN (clothesField) || foodField<0 || rentField<0 || clothesField<0){
         document.getElementById('expense-error').style.display='block';
+        document.getElementById('expense-error2').style.display='none';
     }
     else if(isNaN (incomeField)){
         balance.innerText = 0;
