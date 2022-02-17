@@ -19,11 +19,11 @@
                 <img src="images/money.jpg" alt="Money image"  class="w-100 rounded h-100">
             </div>
             <div class="calculation-right-aligned col-md-6">
-                <div class="border bg-custom text-center h-100">
+                <div class="border bg-custom text-center h-100 rounded">
                     <h4 class="mt-5 mb-3">Income</h4>
                     <h6 class="d-inline pe-2">Income:</h6>
                     <input id="income-field" class="me-md-5 bg-gray border border-0" type="text ">
-                    <p class="text-danger"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 22C6.468 21.994 1.996 17.515 2 11.993C2.004 6.472 6.482 1.998 12.003 2C17.525 2.002 22 6.478 22 12c-.003 5.525-4.485 10.002-10.01 10ZM4 12.172A8 8 0 1 0 4 12v.172ZM13 17h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>Wrong input value! <br>(Please provide positive/numeric value)</p>
+                    <p id = "income-error" class="text-danger d-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 22C6.468 21.994 1.996 17.515 2 11.993C2.004 6.472 6.482 1.998 12.003 2C17.525 2.002 22 6.478 22 12c-.003 5.525-4.485 10.002-10.01 10ZM4 12.172A8 8 0 1 0 4 12v.172ZM13 17h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>Wrong input value! <br>(Please provide positive/numeric value)</p>
                     <h4 class="my-3">Expenses</h4>
                     <h6 class="d-inline pe-2">Food:</h6>
                     <input id="food-field" class="me-md-4 mb-3 bg-gray border border-0" type="text"><br>
@@ -31,16 +31,16 @@
                     <input id="rent-field" class="me-md-4 mb-3 bg-gray border border-0" type="text"><br>
                     <h6 class="d-inline me-2">Clothes: &nbsp;</h6>
                     <input id="clothes-field" class="me-md-5  bg-gray border border-0" type="text"><br>
-                    <p class="text-danger"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 22C6.468 21.994 1.996 17.515 2 11.993C2.004 6.472 6.482 1.998 12.003 2C17.525 2.002 22 6.478 22 12c-.003 5.525-4.485 10.002-10.01 10ZM4 12.172A8 8 0 1 0 4 12v.172ZM13 17h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>Wrong input value! <br>(Please provide positive/numeric value)</p>
-                    <p class="text-danger"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 22C6.468 21.994 1.996 17.515 2 11.993C2.004 6.472 6.482 1.998 12.003 2C17.525 2.002 22 6.478 22 12c-.003 5.525-4.485 10.002-10.01 10ZM4 12.172A8 8 0 1 0 4 12v.172ZM13 17h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>Insufficient amount to expense!</p>
+                    <p id="expense-error" class="text-danger d-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 22C6.468 21.994 1.996 17.515 2 11.993C2.004 6.472 6.482 1.998 12.003 2C17.525 2.002 22 6.478 22 12c-.003 5.525-4.485 10.002-10.01 10ZM4 12.172A8 8 0 1 0 4 12v.172ZM13 17h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>Wrong input value! <br>(Please provide positive/numeric value)</p>
+                    <p id="expense-error2" class="text-danger d-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 22C6.468 21.994 1.996 17.515 2 11.993C2.004 6.472 6.482 1.998 12.003 2C17.525 2.002 22 6.478 22 12c-.003 5.525-4.485 10.002-10.01 10ZM4 12.172A8 8 0 1 0 4 12v.172ZM13 17h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>Insufficient amount to expense!</p>
                     <button id="calculate-btn" class="btn-primary my-4 py-2 px-5 ms-md-3 fw-bold">Calculate</button>
                     <h4>Total Expenses: <span id="total-expenses">00</span></h4>
                     <h4 class="my-3">Balance: <span id="balance">00</span></h4>
                     <h6 class="d-inline ">Save:</h6>
                     <input id="save-field" class="w-25 bg-gray border border-0 text-center bg-gray my-4 py-2" type="text"> <span class="mx-3">%</span>
                     <button id="save-btn" class="btn-primary fw-bold py-2 px-5 mb-4">Save</button>
-                    <p class="text-danger"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 22C6.468 21.994 1.996 17.515 2 11.993C2.004 6.472 6.482 1.998 12.003 2C17.525 2.002 22 6.478 22 12c-.003 5.525-4.485 10.002-10.01 10ZM4 12.172A8 8 0 1 0 4 12v.172ZM13 17h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>Wrong input value! <br>(Please provide positive/numeric value)</p>
-                    <p class="text-danger"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 22C6.468 21.994 1.996 17.515 2 11.993C2.004 6.472 6.482 1.998 12.003 2C17.525 2.002 22 6.478 22 12c-.003 5.525-4.485 10.002-10.01 10ZM4 12.172A8 8 0 1 0 4 12v.172ZM13 17h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>Insufficient amount to save!</p>
+                    <p id="save-error" class="text-danger d-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 22C6.468 21.994 1.996 17.515 2 11.993C2.004 6.472 6.482 1.998 12.003 2C17.525 2.002 22 6.478 22 12c-.003 5.525-4.485 10.002-10.01 10ZM4 12.172A8 8 0 1 0 4 12v.172ZM13 17h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>Wrong input value! <br>(Please provide positive/numeric value)</p>
+                    <p id="save-error2" class="text-danger d-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 22C6.468 21.994 1.996 17.515 2 11.993C2.004 6.472 6.482 1.998 12.003 2C17.525 2.002 22 6.478 22 12c-.003 5.525-4.485 10.002-10.01 10ZM4 12.172A8 8 0 1 0 4 12v.172ZM13 17h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>Insufficient amount to save!</p>
                     <h4>Saving Amount: <span id="savings-amount">00</span></h4>
                     <h4 class="pb-5 mt-3">Remaining Balance: <span id="remaining-balance">00</span></h4>
                 </div>

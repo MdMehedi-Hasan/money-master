@@ -7,24 +7,19 @@ function collectingId(idName){
     const text = document.getElementById(idName);
     return text;
 }
-/* function clearInput(id){
-    const input = document.getElementById(idName);
-    input.innerText = '';
-    return input;
-} */
 document.getElementById('calculate-btn').addEventListener('click',function(){
+ 
     const incomeField = collectId('income-field');
     const foodField = collectId('food-field');
     const rentField = collectId('rent-field');
     const clothesField = collectId('clothes-field');
     const expenses = collectingId('total-expenses');
     const balance = collectingId('balance');
-    //input id's has been taken 
+    // income field validation
     const addingExpenses = foodField+rentField+clothesField;
     expenses.innerText=addingExpenses;
     const subtracting = incomeField-addingExpenses;
     balance.innerText = subtracting;
-    // clearInput('food-field','rent-field','clothes-field');
 })
 
 document.getElementById('save-btn').addEventListener('click',function(){
