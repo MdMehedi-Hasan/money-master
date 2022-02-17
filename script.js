@@ -7,6 +7,11 @@ function collectingId(idName){
     const text = document.getElementById(idName);
     return text;
 }
+/* function clearInput(id){
+    const input = document.getElementById(idName);
+    input.innerText = '';
+    return input;
+} */
 document.getElementById('calculate-btn').addEventListener('click',function(){
     const incomeField = collectId('income-field');
     const foodField = collectId('food-field');
@@ -19,6 +24,7 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
     expenses.innerText=addingExpenses;
     const subtracting = incomeField-addingExpenses;
     balance.innerText = subtracting;
+    // clearInput('food-field','rent-field','clothes-field');
 })
 
 document.getElementById('save-btn').addEventListener('click',function(){
@@ -30,4 +36,5 @@ document.getElementById('save-btn').addEventListener('click',function(){
     const calcPercantage = (incomeField*saveField)/100;
     saving.innerText = calcPercantage;
     remaining.innerText = parseFloat(balance.innerText) - parseFloat(saving.innerText);
+    // clearInput('income-field');
 })
